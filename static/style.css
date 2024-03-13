@@ -1,0 +1,73 @@
+/* Styles for HTML content */
+body {
+
+    background-image: url('img/plant.jpeg');
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    
+    
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    text-align: center;
+    margin: 10;
+    padding: 10;
+}
+
+h1 {
+    color: green;
+    margin: 80px 0;
+}
+
+form {
+    
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    
+    padding: 20px;
+    display: inline-block;
+    text-align: center; /* Center-align the content within the form */
+    opacity: 0.8;
+    border-radius: 40px;
+}
+
+form input[type="submit"] {
+    
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+form input[type="file"] {
+    
+    display: block;
+    margin: 10px 0;
+}
+
+#result {
+   
+    
+    color:white;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+#image-preview {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+/* Center the "Detect" button below the "Choose File" input */
+form input[type="submit"]#upload-button {
+    display: block;
+    margin: 10px auto;
+}

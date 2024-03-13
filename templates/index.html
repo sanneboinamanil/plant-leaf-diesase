@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Plant Disease Detection</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+   
+    <!-- Add this JavaScript code to your HTML template -->
+
+
+</head>
+<body>
+    <h1>DETECTION OF PLANT VIRUS </h1>
+    
+    <form method="post"  enctype="multipart/form-data">
+        
+        <div class="input-container">
+        
+            <input type="file" name="image" accept="image/*" id="image-input">
+            <img id="image-preview" src="" alt="">
+            <input type="submit" value="Detect" id="upload-button" disabled>
+        </div>
+        
+    </form>
+    <div id="result">{% if result %}
+        <p>{{ result }}</p>
+    {% endif %}</div>
+    <div id="imagePreview"></div>
+    
+
+    
+    <script>
+       document.addEventListener('DOMContentLoaded', function () {
+            var imageInput = document.getElementById('image-input');
+            var imagePreview = document.getElementById('image-preview');
+            var uploadButton = document.getElementById('upload-button');
+
+            imageInput.addEventListener('change', function () {
+                if (imageInput.files && imageInput.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        imagePreview.src = e.target.result;
+                        uploadButton.removeAttribute("disabled");
+                    };
+
+                    reader.readAsDataURL(imageInput.files[0]);
+                }
+            });
+            function clearResult() {
+                var resultElement = document.getElementById('result');
+                resultElement.innerHTML = ''; // Clear the content of the result div
+            }
+            document.getElementById('upload-button').addEventListener('click', clearResult);
+        });
+
+
+    </script>
+</body>
+</html>
